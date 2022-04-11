@@ -1,0 +1,16 @@
+import numpy as np
+import matplotlib.pyplot as plt
+t = np.array([100, 200, 300, 400, 500, 600, 700, 800, 900])
+y1 = np.array([0.00206015, 0.0156553, 0.051522, 0.12144 ,0.241865 ,0.40519 ,0.646302 ,0.955799 ,1.37892])
+y2 = np.array([0.000596578 ,0.00324285 ,0.00830467 ,0.0144531 ,0.0280739 ,0.0483955 ,0.0712694 ,0.140088,0.195624])
+y3 = np.array([0.00371004,0.025618,0.0671215,0.153044,0.297223,0.508171,0.80488,1.19268,1.73318])
+y4 = np.array([0.000691009,0.00274287,0.008743,0.019302,0.0265979,0.0587727,0.0662742,0.10463,0.764836])
+linesList = plt.plot(t, y1, label='LUSolver_dense_100-900')
+# plt.annotate('', )
+Lines2 = plt.plot(t, y2, label='Jacobi_dense_100-900')
+lines3 = plt.plot(t, y3, label='GaussSolver_dense_100-900')
+lines4 = plt.plot(t, y4, label='GaussSeidel_dense_100-900')
+plt.legend()
+plt.xlabel('size')
+plt.ylabel('time/s')
+plt.show()
